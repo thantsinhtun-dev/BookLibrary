@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BookListActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlBookListHeader"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_arrow_left_24"
+            app:tint="@color/gray" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtBookListTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/ivBack"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/margin_medium"
+            android:text="This is book list title"
+            android:textSize="@dimen/text_regular_2x"
+            app:fontFamily="@font/poppins_medium" />
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBookList"
+        android:layout_below="@id/rlBookListHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_book_list"
+        app:spanCount="2"
+        />
+
+</RelativeLayout>

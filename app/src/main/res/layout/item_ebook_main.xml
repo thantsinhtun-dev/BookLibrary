@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtEbookGroupName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/ivNext"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:text="More than 3000 More than 3000 More"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/text_regular"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingVertical="@dimen/margin_medium_2"
+        android:paddingEnd="@dimen/margin_medium" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow_right_24"
+        app:tint="@color/colorPrimary"
+        android:layout_alignParentEnd="true"
+        android:paddingHorizontal="@dimen/margin_medium"
+        android:paddingVertical="@dimen/margin_medium_2"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEbookGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtEbookGroupName"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_book_vertical"
+        />
+
+</RelativeLayout>
