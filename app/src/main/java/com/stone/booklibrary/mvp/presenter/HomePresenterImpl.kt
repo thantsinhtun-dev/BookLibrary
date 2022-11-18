@@ -5,6 +5,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import com.stone.booklibrary.data.models.AppModel
 import com.stone.booklibrary.data.models.AppModelImpl
+import com.stone.booklibrary.data.vo.BookVO
 import com.stone.booklibrary.mvp.view.HomeView
 
 class HomePresenterImpl:ViewModel(),HomePresenter {
@@ -21,5 +22,16 @@ class HomePresenterImpl:ViewModel(),HomePresenter {
             Log.i("Gooo","liveData")
             mView?.getAllRecentBook(it)
         }
+    }
+
+    override fun onClickBook(bookVO: BookVO) {
+
+    }
+
+    override fun onClickBookList(bookListName: String, encodedName: String) {
+    }
+
+    override fun onClickBookMore(bookVO: BookVO) {
+        mView?.showBookBottomSheet(bookVO)
     }
 }

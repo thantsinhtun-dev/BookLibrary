@@ -42,4 +42,8 @@ class BookListPresenterImpl : ViewModel(), BookListPresenter {
 
     override fun onClickBookList(bookListName: String, encodedName: String) {
     }
+
+    override fun onClickBookMore(bookVO: BookVO) {
+        mView?.showBookBottomSheet(bookVO)
+    }
 }

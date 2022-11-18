@@ -16,6 +16,7 @@
             android:layout_width="@dimen/margin_xlarge"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_arrow_left_24"
+            android:layout_marginHorizontal="@dimen/margin_medium"
             app:tint="@color/gray" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -27,6 +28,7 @@
             android:gravity="center"
             android:paddingHorizontal="@dimen/margin_medium"
             android:text="This is book list title"
+            android:paddingEnd="@dimen/margin_xxlarge"
             android:textSize="@dimen/text_regular_2x"
             app:fontFamily="@font/poppins_medium" />
 

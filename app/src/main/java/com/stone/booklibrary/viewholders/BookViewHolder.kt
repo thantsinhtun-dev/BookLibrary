@@ -14,6 +14,9 @@ class BookViewHolder(itemView: View, mDelegate: OverviewBookViewHolderDelegate) 
         itemView.imgBook.setOnClickListener {
             bookVO?.let { book -> mDelegate.onClickBook(book) }
         }
+        itemView.imgMore.setOnClickListener {
+            bookVO?.let { book->mDelegate.onClickBookMore(book) }
+        }
     }
     fun bindData(bookVO: BookVO) {
         this.bookVO = bookVO

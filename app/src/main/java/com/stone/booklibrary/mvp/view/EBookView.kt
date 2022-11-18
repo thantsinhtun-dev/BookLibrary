@@ -7,4 +7,5 @@ interface EBookView : BaseView {
     fun getAllOverViewBook(overviewBookList: List<BookOverviewVO>)
     fun navigateToBookDetail(bookVO: BookVO)
     fun navigateToBookList(bookListTile: String,bookListTileEncoded: String)
+
 }

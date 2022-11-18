@@ -2,7 +2,6 @@ package com.stone.booklibrary.fragments
 
 import alirezat775.lib.carouselview.Carousel
 import alirezat775.lib.carouselview.CarouselView
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -102,7 +101,7 @@ class HomeFragment : Fragment(),HomeView {
     }
 
     private fun setUpRecyclerView() {
-        mRecentBookAdapter = RecentBookAdapter()
+        mRecentBookAdapter = RecentBookAdapter(mPresenter)
         carousel = Carousel((activity as AppCompatActivity), rvRecentBook, mRecentBookAdapter)
         carousel.setOrientation(CarouselView.HORIZONTAL, false)
         carousel.scaleView(true)
@@ -120,6 +119,11 @@ class HomeFragment : Fragment(),HomeView {
 
     override fun showError(error: String) {
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showBookBottomSheet(bookVO: BookVO) {
+        val bottomSheet = ManageBookBottomSheet(bookVO)
+        bottomSheet.show(childFragmentManager,bottomSheet.tag)
     }
 
 

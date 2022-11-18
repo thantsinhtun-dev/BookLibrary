@@ -15,15 +15,18 @@ class BookListViewHolder(itemView: View, mDelegate: OverviewBookViewHolderDelega
         itemView.imgBook.setOnClickListener {
             bookVO?.let { book -> mDelegate.onClickBook(book) }
         }
+        itemView.imgMore.setOnClickListener {
+            bookVO?.let { book->mDelegate.onClickBookMore(book) }
+        }
     }
     fun bindData(bookListResult: BookListResult) {
 
-//        this.bookVO = bookListResult.bookDetails[0]
-//        itemView.txtBookName.text = bookVO?.title
-//        itemView.txtBookAuthor.text = bookVO?.author
-//        Glide.with(itemView.context)
-//            .load(bookVO?.bookImage)
-//            .placeholder(R.drawable.ic_person_24)
-//            .into(itemView.imgBook)
+        this.bookVO = bookListResult.bookDetails?.firstOrNull()
+        itemView.txtBookName.text = bookVO?.title
+        itemView.txtBookAuthor.text = bookVO?.author
+        Glide.with(itemView.context)
+            .load(bookVO?.bookImage)
+            .placeholder(R.drawable.ic_person_24)
+            .into(itemView.imgBook)
     }
 }

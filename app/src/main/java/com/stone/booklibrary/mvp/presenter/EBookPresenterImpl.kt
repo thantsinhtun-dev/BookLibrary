@@ -35,4 +35,8 @@ class EBookPresenterImpl : ViewModel(), EBookPresenter {
     override fun onClickBookList(bookListName: String, encodedName: String) {
         mView?.navigateToBookList(bookListName,encodedName)
     }
+
+    override fun onClickBookMore(bookVO: BookVO) {
+        mView?.showBookBottomSheet(bookVO)
+    }
 }

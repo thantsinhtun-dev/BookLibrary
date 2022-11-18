@@ -12,4 +12,7 @@ data class BookListResponse(
 data class BookListResult(
     @SerializedName("list_name")
     val listName:String?,
+
+    @SerializedName("book_details")
+    val bookDetails:List<BookVO>?
 )

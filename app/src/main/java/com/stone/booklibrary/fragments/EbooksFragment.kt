@@ -65,5 +65,10 @@ class EbooksFragment : Fragment(), EBookView {
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
+    override fun showBookBottomSheet(bookVO: BookVO) {
+        val bottomSheet = ManageBookBottomSheet(bookVO)
+        bottomSheet.show(childFragmentManager,bottomSheet.tag)
+    }
+
 
 }

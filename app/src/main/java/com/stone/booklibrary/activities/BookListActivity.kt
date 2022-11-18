@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.stone.booklibrary.R
 import com.stone.booklibrary.adapter.BookListAdapter
 import com.stone.booklibrary.data.vo.BookVO
+import com.stone.booklibrary.fragments.ManageBookBottomSheet
 import com.stone.booklibrary.mvp.presenter.BookListPresenter
 import com.stone.booklibrary.mvp.presenter.BookListPresenterImpl
 import com.stone.booklibrary.mvp.view.BookListView
@@ -40,6 +41,7 @@ class BookListActivity : AppCompatActivity(),BookListView{
         setContentView(R.layout.activity_book_list)
 
         setUpPresenter()
+        setUpListener()
         setUpRecyclerView()
 
         val bookListName = intent?.getStringExtra(EXTRA_BOOK_LIST_NAME)
@@ -55,6 +57,12 @@ class BookListActivity : AppCompatActivity(),BookListView{
 
     }
 
+    private fun setUpListener() {
+        ivBack.setOnClickListener {
+            mPresenter.onTapBack()
+        }
+    }
+
     private fun setUpRecyclerView() {
         mBookListAdapter = BookListAdapter(mPresenter)
         rvBookList.adapter = mBookListAdapter
@@ -66,7 +74,6 @@ class BookListActivity : AppCompatActivity(),BookListView{
     }
 
     override fun getAllBooks(books: List<BookListResult>) {
-        Log.i("Gooo",books.toString())
         mBookListAdapter.setNewData(books)
     }
 
@@ -79,5 +86,10 @@ class BookListActivity : AppCompatActivity(),BookListView{
 
     override fun showError(error: String) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showBookBottomSheet(bookVO: BookVO) {
+        val bottomSheet = ManageBookBottomSheet(bookVO)
+        bottomSheet.show(supportFragmentManager,bottomSheet.tag)
     }
 }
