@@ -4,7 +4,6 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.stone.booklibrary.adapter.BookAdapter
 import com.stone.booklibrary.data.vo.BookOverviewVO
-import com.stone.booklibrary.data.vo.BookVO
 import com.stone.booklibrary.delegate.OverviewBookViewHolderDelegate
 import kotlinx.android.synthetic.main.item_ebook_main.view.*
 
@@ -24,6 +23,6 @@ class OverviewBookViewHolder(itemView: View, mDelegate: OverviewBookViewHolderDe
         mBookVO = bookOverviewVO
         itemView.txtEbookGroupName.text = bookOverviewVO.displayName
         itemView.rvEbookGroup.adapter = mBookAdapter
-        mBookAdapter.setNewData(bookOverviewVO.bookList)
+        mBookAdapter.setNewData(bookOverviewVO.bookList,mBookVO?.displayName ?:"")
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/margin_medium_2"
+    android:paddingVertical="@dimen/text_regular_2x"
+    >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvViewAs"
+        android:text="@string/lbl_view_as"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/text_regular_3x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RadioGroup
+        android:id="@+id/rdGroup"
+        android:layout_below="@id/tvViewAs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rdList"
+            android:text="@string/lbl_list"
+            android:checked="true"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/text_regular_2x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rdLarge"
+            android:text="@string/lbl_large"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/text_regular_2x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rdSmall"
+            android:text="@string/lbl_small"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/text_regular_2x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
+</RelativeLayout>

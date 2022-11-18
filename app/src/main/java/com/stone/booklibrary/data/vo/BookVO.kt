@@ -26,5 +26,10 @@ data class BookVO(
     @ColumnInfo(name = "description")
     @SerializedName("description")
     val description: String?,
+    @ColumnInfo(name = "list_name")
+    var listName: String?,
+
+    var selected:Boolean = false,
+    var index:Int=0
 
 )
