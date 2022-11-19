@@ -5,11 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.stone.booklibrary.data.vo.BookVO
-import com.stone.booklibrary.data.vo.ShelvesVO
+import com.stone.booklibrary.data.vo.ShelfVO
 import com.stone.booklibrary.persistance.dao.RecentBookDao
 import com.stone.booklibrary.persistance.dao.ShelvesDao
 
-@Database(entities = [BookVO::class,ShelvesVO::class], version = 1, exportSchema = false)
+@Database(entities = [BookVO::class,ShelfVO::class], version = 1, exportSchema = false)
 abstract class BookDatabase : RoomDatabase() {
     companion object {
         private const val dbName = "BOOK_LIBRARY"

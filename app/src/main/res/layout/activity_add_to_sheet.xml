@@ -11,6 +11,9 @@
         android:id="@+id/tvAddToShelves"
         android:text="@string/lbl_add_to_shelves"
         app:textAllCaps="true"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/text_regular_3x"
+        android:layout_marginVertical="@dimen/margin_medium_2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -21,9 +24,13 @@
         android:layout_alignParentEnd="true"
         app:srcCompat="@drawable/ic_cancel_24"
         android:layout_width="wrap_content"
+        android:layout_alignBottom="@id/tvAddToShelves"
         android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvShelves"
+        android:layout_below="@id/tvAddToShelves"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_addto_shelves"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

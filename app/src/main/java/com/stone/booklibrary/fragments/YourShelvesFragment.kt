@@ -12,7 +12,7 @@ import com.stone.booklibrary.activities.CreateNewsShelvesActivity
 import com.stone.booklibrary.activities.ShelvesActivity
 import com.stone.booklibrary.adapter.ShelvesAdapter
 import com.stone.booklibrary.data.vo.BookVO
-import com.stone.booklibrary.data.vo.ShelvesVO
+import com.stone.booklibrary.data.vo.ShelfVO
 import com.stone.booklibrary.mvp.presenter.ShelvesListPresenter
 import com.stone.booklibrary.mvp.presenter.ShelvesListPresenterImpl
 import com.stone.booklibrary.mvp.view.ShelvesListView
@@ -58,12 +58,12 @@ class YourShelvesFragment : Fragment() ,ShelvesListView{
         mPresenter.init(this)
     }
 
-    override fun getAllShelves(shelves: List<ShelvesVO>) {
+    override fun getAllShelves(shelves: List<ShelfVO>) {
         mAdapter.setNewData(shelves)
     }
 
-    override fun onTapShelves(shelvesVO: ShelvesVO) {
-        startActivity(context?.let { ShelvesActivity.getIntent(it) })
+    override fun onTapShelves(shelvesVO: ShelfVO) {
+        startActivity(context?.let { ShelvesActivity.getIntent(it,shelvesVO) })
     }
 
     override fun onTapCreateShelves() {

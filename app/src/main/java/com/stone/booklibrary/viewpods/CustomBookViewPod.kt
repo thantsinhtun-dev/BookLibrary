@@ -19,9 +19,6 @@ class CustomBookViewPod @JvmOverloads constructor(
     lateinit var mBookListAdapter: CategoryBookListAdapter
     lateinit var mDelegate: BookCategoryViewHolderDelegate
 
-    init {
-
-    }
     override fun onFinishInflate() {
         super.onFinishInflate()
     }

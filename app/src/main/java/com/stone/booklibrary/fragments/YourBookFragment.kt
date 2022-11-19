@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.stone.booklibrary.R
+import com.stone.booklibrary.activities.AddToSheetActivity
 import com.stone.booklibrary.data.vo.BookVO
 import com.stone.booklibrary.mvp.presenter.YourBookPresenter
 import com.stone.booklibrary.mvp.presenter.YourBookPresenterImpl
@@ -63,9 +64,9 @@ class YourBookFragment : Fragment(),YourBookView {
         mCustomBookViewPod.setNewBookData(books)
     }
 
-    override fun onClickBookCategory(books: List<BookVO>) {
+    override fun onClickBookCategory(bookVO: List<BookVO>) {
         ivCancel.visibility = View.VISIBLE
-        mCustomBookViewPod.setNewData(books)
+        mCustomBookViewPod.setNewData(bookVO)
     }
 
     override fun onClickCancelImage() {
@@ -89,7 +90,7 @@ class YourBookFragment : Fragment(),YourBookView {
     }
 
     override fun addToShelves(bookVO: BookVO) {
-
+        startActivity(context?.let { AddToSheetActivity.getIntent(it,bookVO) })
     }
 
     override fun showError(error: String) {

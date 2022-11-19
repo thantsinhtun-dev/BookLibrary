@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.stone.booklibrary.R
-import com.stone.booklibrary.data.vo.ShelvesVO
+import com.stone.booklibrary.data.vo.ShelfVO
 import com.stone.booklibrary.mvp.presenter.ShelvesListPresenter
 import com.stone.booklibrary.viewholders.ShelvesViewHolder
 
 class ShelvesAdapter (private  val mDelegate:ShelvesListPresenter): RecyclerView.Adapter<ShelvesViewHolder>() {
-    private var shelvesList: List<ShelvesVO> = arrayListOf()
+    private var shelvesList: List<ShelfVO> = arrayListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShelvesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_shelves,parent,false)
         return  ShelvesViewHolder(view,mDelegate)
@@ -27,7 +27,7 @@ class ShelvesAdapter (private  val mDelegate:ShelvesListPresenter): RecyclerView
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setNewData(shelves: List<ShelvesVO>) {
+    fun setNewData(shelves: List<ShelfVO>) {
         this.shelvesList = shelves
         notifyDataSetChanged()
 

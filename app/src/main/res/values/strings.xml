@@ -22,4 +22,5 @@
     <string name="lbl_create_shelf">Create Shelf</string>
     <string name="hint_shelf_name">Shelf name</string>
     <string name="lbl_create_new_shelf">Create New Shelf</string>
+    <string name="lbl_rename_shelf">Rename Shelf</string>
 </resources>

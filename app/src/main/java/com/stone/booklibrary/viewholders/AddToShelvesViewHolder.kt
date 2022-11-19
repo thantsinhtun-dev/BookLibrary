@@ -5,15 +5,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.stone.booklibrary.R
 import com.stone.booklibrary.data.vo.ShelfVO
-import com.stone.booklibrary.mvp.presenter.ShelvesListPresenter
-import kotlinx.android.synthetic.main.item_shelves.view.*
+import com.stone.booklibrary.delegate.OnClickCheckBoxDelegate
+import kotlinx.android.synthetic.main.item_addto_shelves.view.*
 
-class ShelvesViewHolder(itemView: View, val mDelegate: ShelvesListPresenter) :RecyclerView.ViewHolder(itemView) {
-
+class AddToShelvesViewHolder(itemView: View, val mDelegate: OnClickCheckBoxDelegate) :RecyclerView.ViewHolder(itemView) {
     var shelvesVO:ShelfVO? = null
     init {
-        itemView.setOnClickListener {
-            shelvesVO?.let { it1 -> mDelegate.onClickShelves(it1) }
+//        itemView.setOnClickListener {
+//            shelvesVO?.let { it1 -> mDelegate.onClickCheckBox(it1) }
+//        }
+        itemView.cbShelves.setOnCheckedChangeListener { compoundButton, b ->
+            shelvesVO?.let { it1 -> mDelegate.onClickCheckBox(it1) }
         }
     }
     fun bindData(shelvesVO: ShelfVO) {

@@ -5,28 +5,26 @@ import androidx.lifecycle.ViewModel
 import com.stone.booklibrary.data.models.AppModel
 import com.stone.booklibrary.data.models.AppModelImpl
 import com.stone.booklibrary.data.vo.ShelfVO
-import com.stone.booklibrary.mvp.view.ShelvesListView
+import com.stone.booklibrary.mvp.view.AddToShelvesView
 
-class ShelvesListPresenterImpl :ViewModel(),ShelvesListPresenter{
-    private var mView: ShelvesListView? = null
+class AddToShelvesPresenterImpl:ViewModel(),AddToShelvesPresenter {
+    private var mView: AddToShelvesView? = null
     private var mAppModel: AppModel = AppModelImpl
-    override fun init(view: ShelvesListView) {
-        mView = view
+    override fun init(addToShelvesView: AddToShelvesView) {
+        mView = addToShelvesView
     }
 
-    override fun onClickShelves(shelvesVO: ShelfVO) {
-        mView?.onTapShelves(shelvesVO)
-    }
-
-    override fun onClickCreateNewShelf() {
-        mView?.onTapCreateShelves()
+    override fun onClickCheckBox(bookVO: ShelfVO?) {
+        mAppModel.addBookToShelves(bookVO)
     }
 
     override fun onUIReady(owner: LifecycleOwner) {
         mAppModel.getAllShelves {
             mView?.showError(it)
         }?.observe(owner){
-            mView?.getAllShelves(it)
+            mView?.getALLShelves(it)
         }
+
+
     }
 }

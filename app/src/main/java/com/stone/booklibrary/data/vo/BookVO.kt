@@ -32,4 +32,4 @@ data class BookVO(
     var selected:Boolean = false,
     var index:Int=0
 
-)
+):java.io.Serializable

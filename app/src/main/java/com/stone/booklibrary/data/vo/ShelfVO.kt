@@ -8,10 +8,11 @@ import com.stone.booklibrary.persistance.BookTypeConverter
 
 @Entity(tableName = "shelves")
 @TypeConverters(BookTypeConverter::class)
-data class ShelvesVO(
-    @PrimaryKey
+data class ShelfVO(
+    @PrimaryKey(autoGenerate = true)
+    val id:Int,
     @ColumnInfo(name = "shelves_title")
-    val shelvesTitle: String,
+    var shelvesTitle: String,
     @ColumnInfo(name = "book_lists")
-    val bookLists: List<BookVO>?
-)
+    var bookLists: MutableList<BookVO>?
+):java.io.Serializable
