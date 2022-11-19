@@ -84,12 +84,16 @@ class BookListActivity : AppCompatActivity(),BookListView{
     override fun onTapBook(bookVO: BookVO) {
     }
 
+    override fun addToShelves(bookVO: BookVO) {
+
+    }
+
     override fun showError(error: String) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
     }
 
     override fun showBookBottomSheet(bookVO: BookVO) {
-        val bottomSheet = ManageBookBottomSheet(bookVO)
+        val bottomSheet = ManageBookBottomSheet(bookVO,mPresenter)
         bottomSheet.show(supportFragmentManager,bottomSheet.tag)
     }
 }

@@ -88,11 +88,17 @@ class YourBookFragment : Fragment(),YourBookView {
         mCustomBookViewPod.setNewBookData(books)
     }
 
+    override fun addToShelves(bookVO: BookVO) {
+
+    }
+
     override fun showError(error: String) {
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
     override fun showBookBottomSheet(bookVO: BookVO) {
+        val sheet = ManageBookBottomSheet(bookVO,mPresenter)
+        sheet.show(childFragmentManager,sheet.tag)
     }
 
 

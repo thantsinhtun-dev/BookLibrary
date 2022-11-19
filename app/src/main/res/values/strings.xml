@@ -19,4 +19,7 @@
     <string name="lbl_view_as">View As</string>
     <string name="lbl_large">Large</string>
     <string name="lbl_small">Small</string>
+    <string name="lbl_create_shelf">Create Shelf</string>
+    <string name="hint_shelf_name">Shelf name</string>
+    <string name="lbl_create_new_shelf">Create New Shelf</string>
 </resources>

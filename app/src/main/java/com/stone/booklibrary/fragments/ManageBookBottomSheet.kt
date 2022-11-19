@@ -8,9 +8,10 @@ import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.stone.booklibrary.R
 import com.stone.booklibrary.data.vo.BookVO
+import com.stone.booklibrary.delegate.AddToShelvesDelegate
 import kotlinx.android.synthetic.main.fragment_manage_book_bottomsheet.*
 
-class ManageBookBottomSheet(val bookVO: BookVO): BottomSheetDialogFragment() {
+class ManageBookBottomSheet(val bookVO: BookVO,val mDelegate:AddToShelvesDelegate): BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +43,8 @@ class ManageBookBottomSheet(val bookVO: BookVO): BottomSheetDialogFragment() {
         rlDownload.setOnClickListener {  }
         rlDelete.setOnClickListener { }
         rlMakeRead.setOnClickListener {  }
-        rlShelves.setOnClickListener {  }
+        rlShelves.setOnClickListener {
+            mDelegate.onClickAddToShelves(bookVO)
+        }
     }
 }

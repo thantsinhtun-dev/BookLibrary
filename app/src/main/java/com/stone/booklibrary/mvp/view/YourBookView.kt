@@ -11,4 +11,5 @@ interface YourBookView :BaseView{
     fun onTapSortList()
     fun changeRecyclerViewStyle(listStyle: ListStyle)
     fun rebuildList(books: List<BookVO>)
+    fun addToShelves(bookVO: BookVO)
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CreateNewsShelvesActivity">
+    <RelativeLayout
+        android:id="@+id/rlBookListHeader"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_arrow_left_24"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            app:tint="@color/gray" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtBookListTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/ivBack"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/margin_medium"
+            android:text="@string/lbl_create_shelf"
+            android:paddingEnd="@dimen/margin_xxlarge"
+            android:textSize="@dimen/text_regular_2x"
+            app:fontFamily="@font/poppins_medium" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editCreateShelf"
+        android:layout_marginVertical="@dimen/margin_xlarge"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:hint="@string/hint_shelf_name"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/text_regular_3x"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:layout_below="@id/rlBookListHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

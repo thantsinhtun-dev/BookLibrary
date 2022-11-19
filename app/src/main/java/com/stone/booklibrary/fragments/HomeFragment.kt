@@ -117,12 +117,16 @@ class HomeFragment : Fragment(),HomeView {
 
     }
 
+    override fun addToShelves(bookVO: BookVO) {
+
+    }
+
     override fun showError(error: String) {
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
     override fun showBookBottomSheet(bookVO: BookVO) {
-        val bottomSheet = ManageBookBottomSheet(bookVO)
+        val bottomSheet = ManageBookBottomSheet(bookVO,mPresenter)
         bottomSheet.show(childFragmentManager,bottomSheet.tag)
     }
 

@@ -8,4 +8,6 @@ interface EBookView : BaseView {
     fun navigateToBookDetail(bookVO: BookVO)
     fun navigateToBookList(bookListTile: String,bookListTileEncoded: String)
 
+    fun addToShelves(bookVO: BookVO)
+
 }

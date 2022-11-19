@@ -3,6 +3,7 @@ package com.stone.booklibrary.data.models
 import androidx.lifecycle.LiveData
 import com.stone.booklibrary.data.vo.BookOverviewVO
 import com.stone.booklibrary.data.vo.BookVO
+import com.stone.booklibrary.data.vo.ShelvesVO
 import com.stone.booklibrary.network.responses.BookListResult
 
 interface AppModel {
@@ -21,6 +22,12 @@ interface AppModel {
         bookListName:String,
         onSuccess:(List<BookListResult>)->Unit,
         onFailure:(String)->Unit
+    )
+    fun getAllShelves(
+        onFailure:(String)->Unit
+    ):LiveData<List<ShelvesVO>>?
+    fun createNewShelves(
+        string: String
     )
 
 }

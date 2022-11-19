@@ -76,5 +76,9 @@ class YourBookPresenterImpl : ViewModel(), YourBookPresenter {
         mView?.changeRecyclerViewStyle(listStyle)
     }
 
+    override fun onClickAddToShelves(bookVO: BookVO) {
+        mView?.addToShelves(bookVO)
+    }
+
 
 }

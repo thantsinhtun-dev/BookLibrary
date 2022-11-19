@@ -46,4 +46,8 @@ class BookListPresenterImpl : ViewModel(), BookListPresenter {
     override fun onClickBookMore(bookVO: BookVO) {
         mView?.showBookBottomSheet(bookVO)
     }
+
+    override fun onClickAddToShelves(bookVO: BookVO) {
+        mView?.addToShelves(bookVO)
+    }
 }

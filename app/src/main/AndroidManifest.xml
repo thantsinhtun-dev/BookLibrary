@@ -16,6 +16,29 @@
         android:theme="@style/Theme.BookLibrary"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ShelvesActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.CreateNewsShelvesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BookLibrary.translucentScreenWhiteStatusBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.AddToSheetActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BookLibrary.translucentScreenWhiteStatusBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.BookListActivity"
             android:exported="false"
             android:theme="@style/Theme.BookLibrary.translucentScreenWhiteStatusBar">
@@ -35,7 +58,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

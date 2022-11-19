@@ -1,4 +1,4 @@
-package com.stone.booklibrary.persistance
+package com.stone.booklibrary.persistance.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

@@ -1,9 +1,10 @@
 package com.stone.booklibrary.mvp.presenter
 
+import com.stone.booklibrary.delegate.AddToShelvesDelegate
 import com.stone.booklibrary.delegate.OverviewBookViewHolderDelegate
 import com.stone.booklibrary.mvp.view.HomeView
 
 
-interface HomePresenter:BasePresenter,OverviewBookViewHolderDelegate {
+interface HomePresenter:BasePresenter,OverviewBookViewHolderDelegate,AddToShelvesDelegate {
     fun initView(view: HomeView)
 }

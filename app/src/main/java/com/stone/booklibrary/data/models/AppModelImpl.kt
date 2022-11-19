@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import com.stone.booklibrary.data.vo.BookOverviewVO
 import com.stone.booklibrary.data.vo.BookVO
+import com.stone.booklibrary.data.vo.ShelvesVO
 import com.stone.booklibrary.network.responses.BookListResult
 import com.stone.booklibrary.utils.PARAM_LIST_NAME
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -56,6 +57,15 @@ object AppModelImpl : BaseModel(), AppModel {
                 onFailure(it.localizedMessage ?: "")
             })
 
+    }
+
+    override fun getAllShelves(onFailure: (String) -> Unit): LiveData<List<ShelvesVO>>? {
+        return mBooksDatabase?.shelvesDao()?.getAllShelves()
+    }
+
+    override fun createNewShelves(string: String) {
+        val shelvesVO:ShelvesVO = ShelvesVO(shelvesTitle = string,null)
+        mBooksDatabase?.shelvesDao()?.insertSingleShelves(shelvesVO)
     }
 
 }
