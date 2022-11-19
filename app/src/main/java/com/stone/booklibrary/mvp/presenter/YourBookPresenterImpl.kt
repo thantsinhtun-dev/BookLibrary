@@ -22,12 +22,14 @@ class YourBookPresenterImpl : ViewModel(), YourBookPresenter {
     }
 
     override fun onClickCancelImg() {
-        mView?.onClickCancelImage()
+
         for (book in books){
             book.selected = false
         }
         mView?.onClickBookCategory(books)
         mView?.rebuildList(books)
+        mView?.onClickCancelImage()
+
     }
 
     override fun onUIReady(owner: LifecycleOwner) {

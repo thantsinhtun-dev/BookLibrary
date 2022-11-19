@@ -16,4 +16,5 @@ interface ShelvesDetailView :BaseView{
     fun addToShelves(bookVO: BookVO)
     fun editShelvesName(isEdit:Boolean)
 
+
 }

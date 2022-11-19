@@ -30,7 +30,16 @@ class ShelvesDetailsPresenterImpl:ViewModel(),ShelvesDetailPresenter {
     }
 
     override fun onClickCancelImg() {
-        mView?.onClickCancelImage()
+
+        books?.let {
+            for (book in it){
+                book.selected = false
+            }
+            mView?.onClickBookCategory(it)
+            mView?.rebuildList(it)
+            mView?.onClickCancelImage()
+        }
+
     }
 
     override fun onUIReady(owner: LifecycleOwner, shelvesName: String) {
@@ -39,6 +48,7 @@ class ShelvesDetailsPresenterImpl:ViewModel(),ShelvesDetailPresenter {
         }?.observe(owner){
             it?.bookLists?.let { it1 ->
                 mView?.getAllBooks(it1)
+                books=it1
             }
         }
     }
@@ -101,5 +111,6 @@ class ShelvesDetailsPresenterImpl:ViewModel(),ShelvesDetailPresenter {
 
     override fun onClickDelete(shelfTitle: String) {
         mAppMode.deleteShelves(shelfTitle)
+        mView?.onClickBack()
     }
 }

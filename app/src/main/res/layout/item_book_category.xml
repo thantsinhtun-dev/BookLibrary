@@ -7,9 +7,10 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/chipBookCategory"
         android:text="Ebook"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="@dimen/text_small"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="@dimen/text_smaller"
         android:maxLines="2"
+        android:textAllCaps="false"
         android:textStyle="bold"
         android:layout_marginHorizontal="@dimen/margin_medium"
         android:textColor="@color/black"

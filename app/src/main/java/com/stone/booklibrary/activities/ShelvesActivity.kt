@@ -70,6 +70,9 @@ class ShelvesActivity : AppCompatActivity() ,ShelvesDetailView{
             return@setOnEditorActionListener false
 
         }
+        ivCancel.setOnClickListener {
+            mPresenter.onClickCancelImg()
+        }
     }
 
     private fun setUpViewPods() {

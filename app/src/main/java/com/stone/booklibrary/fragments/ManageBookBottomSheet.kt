@@ -31,6 +31,7 @@ class ManageBookBottomSheet(val bookVO: BookVO,val mDelegate:AddToShelvesDelegat
         context?.let {
             Glide.with(it)
                 .load(bookVO.bookImage)
+                .placeholder(R.drawable.book)
                 .into(ivBook)
 
             tvBookTitle.text = bookVO.title

@@ -6,7 +6,7 @@
     android:paddingEnd="@dimen/margin_medium_2"
     >
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imgBook"
         android:layout_width="match_parent"
         android:layout_height="200dp"

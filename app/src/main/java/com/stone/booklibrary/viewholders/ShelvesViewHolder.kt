@@ -23,7 +23,7 @@ class ShelvesViewHolder(itemView: View, val mDelegate: ShelvesListPresenter) :Re
 
         Glide.with(itemView.context)
             .load(shelvesVO.bookLists?.firstOrNull()?.bookImage)
-            .placeholder(R.drawable.ic_person_24)
+            .placeholder(R.drawable.book)
             .into(itemView.imgShelves)
     }
 }

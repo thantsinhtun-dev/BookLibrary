@@ -45,4 +45,5 @@
     <dimen name="width_image_bottom_sheet">50dp</dimen>
     <dimen name="height_image_bottom_sheet">100dp</dimen>
     <dimen name="width_img_shelves">100dp</dimen>
+    <dimen name="height_recent_bok">200dp</dimen>
 </resources>

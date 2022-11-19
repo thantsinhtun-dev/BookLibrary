@@ -37,6 +37,9 @@ class HomeActivity : AppCompatActivity() {
                 Log.i("success",it)
             }
         )
+        edSearch.setOnClickListener {
+            startActivity(SearchBookActivity.getIntent(context = this))
+        }
     }
 
     private fun setCurrentFragment(fragment : Fragment) {

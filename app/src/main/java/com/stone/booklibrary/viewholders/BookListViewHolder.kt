@@ -26,7 +26,7 @@ class BookListViewHolder(itemView: View, mDelegate: OverviewBookViewHolderDelega
         itemView.txtBookAuthor.text = bookVO?.author
         Glide.with(itemView.context)
             .load(bookVO?.bookImage)
-            .placeholder(R.drawable.ic_person_24)
+            .placeholder(R.drawable.book)
             .into(itemView.imgBook)
     }
 }

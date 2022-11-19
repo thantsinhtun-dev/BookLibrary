@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.HomeActivity">
+    tools:context=".activities.SearchBookActivity">
 
     <RelativeLayout
         android:id="@+id/rlSearch"
@@ -37,7 +37,7 @@
                     android:layout_centerVertical="true"
                     app:srcCompat="@drawable/ic_search_24" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edSearch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -45,6 +45,9 @@
                     android:layout_toEndOf="@id/ivSearch"
                     android:background="@null"
                     android:fontFamily="@font/poppins_medium"
+
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
                     android:hint="@string/hint_search_for_books"
                     android:paddingHorizontal="@dimen/margin_medium_2"
                     android:textSize="@dimen/text_regular_2x" />
@@ -59,20 +62,25 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainer"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottomNavi"
-        android:layout_below="@id/rlSearch" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavi"
-        android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/main_menu"
+        android:layout_marginVertical="@dimen/margin_medium_2"
+        android:layout_below="@id/rlSearch"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorFullWidth="false"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="@style/CustomTabTextAppearance"
         />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout"
+        tools:listitem="@layout/item_search_book"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
 </RelativeLayout>

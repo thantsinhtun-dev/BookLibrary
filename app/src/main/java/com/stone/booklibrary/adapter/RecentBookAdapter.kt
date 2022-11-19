@@ -44,7 +44,6 @@ class RecentBookAdapter(val mDelegate: OverviewBookViewHolderDelegate) : Carouse
             Glide.with(itemView.context)
                 .load(bookVO.bookImage)
                 .placeholder(R.drawable.book)
-                .centerCrop()
                 .into(itemView.imgBook)
         }
         init {

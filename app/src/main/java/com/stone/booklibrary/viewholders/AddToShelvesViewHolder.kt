@@ -25,7 +25,7 @@ class AddToShelvesViewHolder(itemView: View, val mDelegate: OnClickCheckBoxDeleg
 
         Glide.with(itemView.context)
             .load(shelvesVO.bookLists?.firstOrNull()?.bookImage)
-            .placeholder(R.drawable.ic_person_24)
+            .placeholder(R.drawable.book)
             .into(itemView.imgShelves)
     }
 }

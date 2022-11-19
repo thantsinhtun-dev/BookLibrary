@@ -33,7 +33,7 @@ class CategoryBookListViewHolder(
             bookVO?.bookImage?.let { Log.i("Gooimg", it) }
             Glide.with(itemView.context)
                 .load(bookVO?.bookImage)
-                .placeholder(R.drawable.ic_person_24)
+                .placeholder(R.drawable.book)
                 .into(itemView.imgBook)
 
     }
