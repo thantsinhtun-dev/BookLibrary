@@ -33,7 +33,6 @@ class SearchBookActivity : AppCompatActivity() ,SearchBookView{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_movie)
 
-
         edSearch.requestFocus()
 
         setUpPresenter()
@@ -49,7 +48,7 @@ class SearchBookActivity : AppCompatActivity() ,SearchBookView{
     }
 
     private fun setUpRecyclerView() {
-        mAdapter = SearchBookAdapter()
+        mAdapter = SearchBookAdapter(mPresenter)
         rvHome.adapter = mAdapter
     }
 
@@ -93,6 +92,10 @@ class SearchBookActivity : AppCompatActivity() ,SearchBookView{
 
     override fun onTapBack() {
         onBackPressed()
+    }
+
+    override fun navigateToBookDetail(bookVO: BookVO) {
+        startActivity(BookDetailActivity.getIntent(this,bookVO))
     }
 
     override fun showError(error: String) {

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.stone.booklibrary.R
+import com.stone.booklibrary.activities.BookDetailActivity
 import com.stone.booklibrary.activities.BookListActivity
 import com.stone.booklibrary.adapter.OverviewBookAdapter
 import com.stone.booklibrary.data.vo.BookOverviewVO
@@ -54,7 +55,7 @@ class EbooksFragment : Fragment(), EBookView {
     }
 
     override fun navigateToBookDetail(bookVO: BookVO) {
-
+        startActivity(context?.let { BookDetailActivity.getIntent(it,bookVO) })
     }
 
     override fun navigateToBookList(bookListTile: String, bookListTileEncoded: String) {

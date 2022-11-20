@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/margin_large"
+    android:paddingVertical="@dimen/margin_medium"
+    tools:context=".activities.BookDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            app:srcCompat="@drawable/ic_arrow_left_24"
+            app:tint="@color/color_dark_grey" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUpload"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/margin_medium"
+            app:srcCompat="@drawable/ic_upload"
+            app:tint="@color/color_dark_grey" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlBookInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlHeader"
+        android:layout_marginVertical="@dimen/margin_medium_2">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivSearchBook"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:background="@color/colorPrimary"
+            app:shapeAppearanceOverlay="@style/ImageView.Corner"
+            app:srcCompat="@drawable/book" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivSearchBook"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/margin_medium_2"
+            android:paddingVertical="@dimen/margin_medium"
+            android:text="Title"
+            android:textSize="@dimen/text_regular"
+            app:fontFamily="@font/poppins_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBookTitle"
+            android:layout_toEndOf="@id/ivSearchBook"
+            android:paddingHorizontal="@dimen/margin_medium_2"
+            android:paddingVertical="@dimen/margin_medium"
+            android:text="Author"
+            android:textSize="@dimen/text_small"
+            app:fontFamily="@font/poppins_regular" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rlPurchase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlBookInfo"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_btn"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_weight="2"
+            android:text="@string/free_sample"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            app:backgroundTint="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_btn"
+            android:layout_weight="3"
+            android:text="@string/add_to_wishlist"
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_baseline_bookmark_add_24" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAboutBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlPurchase"
+        android:layout_marginVertical="@dimen/margin_medium">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAboutBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_book"
+            android:textSize="@dimen/text_regular_2x"
+            app:fontFamily="@font/poppins_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAboutBook"
+            android:text="@string/lorem" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -82,10 +82,14 @@ class BookListActivity : AppCompatActivity(),BookListView{
     }
 
     override fun onTapBook(bookVO: BookVO) {
+        startActivity(BookDetailActivity.getIntent(this,bookVO))
     }
 
     override fun addToShelves(bookVO: BookVO) {
 
+    }
+
+    override fun navigateToBookDetail(bookVO: BookVO) {
     }
 
     override fun showError(error: String) {

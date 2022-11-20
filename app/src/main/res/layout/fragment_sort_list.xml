@@ -2,18 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingHorizontal="@dimen/margin_medium_2"
-    android:paddingVertical="@dimen/text_regular_2x"
-    >
+    android:paddingVertical="@dimen/text_regular_2x">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvViewAs"
-        android:text="@string/lbl_view_as"
-        android:fontFamily="@font/poppins_regular"
-        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:text="@string/sort_by"
+        app:fontFamily="@font/poppins_regular"
         android:textSize="@dimen/text_regular_2x"
         android:textStyle="bold"
         android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/margin_medium_2"
         android:layout_height="wrap_content"/>
     <RadioGroup
         android:id="@+id/rdGroup"
@@ -21,22 +21,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rdList"
-            android:text="@string/lbl_list"
+            android:id="@+id/rdRecent"
+            android:text="@string/recent_open"
             android:fontFamily="@font/poppins_regular"
             android:textSize="@dimen/text_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rdLarge"
-            android:text="@string/lbl_large"
+            android:id="@+id/rdTitle"
+            android:text="@string/title"
             android:fontFamily="@font/poppins_regular"
             android:textSize="@dimen/text_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rdSmall"
-            android:text="@string/lbl_small"
+            android:id="@+id/rdAuthor"
+            android:text="@string/author"
             android:fontFamily="@font/poppins_regular"
             android:textSize="@dimen/text_regular"
             android:layout_width="match_parent"

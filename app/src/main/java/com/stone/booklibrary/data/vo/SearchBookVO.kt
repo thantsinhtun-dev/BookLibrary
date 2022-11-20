@@ -18,8 +18,8 @@ data class SearchBookVO(
     val publishedDate: String?,
 
 
-    @ColumnInfo(name = "categories")
-    var listName: String?,
+    @SerializedName(  "categories")
+    var listName: List<String>?,
 
     @SerializedName("imageLinks")
     val bookImage: BookImage?,

@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.stone.booklibrary.R
+import com.stone.booklibrary.delegate.SearchBookDelegate
 import com.stone.booklibrary.network.responses.SearchBookVolumeInfo
 import com.stone.booklibrary.viewholders.SearchBookViewHolder
 
-class SearchBookAdapter : RecyclerView.Adapter<SearchBookViewHolder>() {
+class SearchBookAdapter(private val mDelegate:SearchBookDelegate) : RecyclerView.Adapter<SearchBookViewHolder>() {
     private var bookVolume: List<SearchBookVolumeInfo> = arrayListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchBookViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_search_book, parent, false)
-        return SearchBookViewHolder(view)
+        return SearchBookViewHolder(view,mDelegate)
     }
 
     override fun onBindViewHolder(holder: SearchBookViewHolder, position: Int) {

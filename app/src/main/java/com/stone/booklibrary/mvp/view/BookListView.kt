@@ -8,4 +8,5 @@ interface BookListView :BaseView{
     fun navigateBack()
     fun onTapBook(bookVO: BookVO)
     fun addToShelves(bookVO: BookVO)
+    fun navigateToBookDetail(bookVO: BookVO)
 }

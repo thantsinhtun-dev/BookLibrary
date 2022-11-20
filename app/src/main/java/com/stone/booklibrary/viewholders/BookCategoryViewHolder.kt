@@ -20,7 +20,7 @@ class BookCategoryViewHolder(itemView: View, mDelegate: BookCategoryViewHolderDe
         this.bookVO = bookVO
         itemView.chipBookCategory.text = bookVO.listName
 
-        if (bookVO.selected == true){
+        if (bookVO.selected){
             itemView.chipBookCategory.apply {
                     setTextColor(ContextCompat.getColor(context,R.color.white))
                     backgroundTintList =

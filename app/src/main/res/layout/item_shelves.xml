@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginVertical="@dimen/margin_medium"
-    android:background="@color/color_dark_grey"
-    android:layout_marginHorizontal="@dimen/margin_medium_2"
-    android:paddingVertical="@dimen/margin_medium"
+    android:paddingVertical="@dimen/margin_medium">
 
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imgShelves"
         android:layout_width="@dimen/width_img_shelves"
         android:layout_height="70dp"
-        android:layout_marginHorizontal="@dimen/margin_large"
-        app:srcCompat="@drawable/ic_person_24"
-        />
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        app:shapeAppearanceOverlay="@style/ImageView.Corner.small"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/book" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvShelvesName"
-        android:layout_toEndOf="@id/imgShelves"
-        android:layout_marginTop="@dimen/margin_medium_2"
-        android:text="Shelves"
-        android:fontFamily="@font/poppins_medium"
-        android:textSize="@dimen/text_regular_2x"
-        android:maxLines="2"
-        android:ellipsize="end"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_toEndOf="@id/imgShelves"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:maxLines="2"
+        android:text="Shelves"
+        android:textSize="@dimen/text_regular_2x" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvShelvesBookCount"
-        android:layout_toEndOf="@id/imgShelves"
-        android:text="Books"
-        android:layout_below="@id/tvShelvesName"
-        android:fontFamily="@font/poppins_light"
-        android:textSize="@dimen/text_small"
-        android:maxLines="2"
-        android:ellipsize="end"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvShelvesName"
+        android:layout_toEndOf="@id/imgShelves"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_light"
+        android:maxLines="2"
+        android:text="Books"
+        android:textSize="@dimen/text_small" />
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivNext"
-        android:layout_alignParentEnd="true"
-        app:srcCompat="@drawable/ic_arrow_right_24"
-        android:paddingHorizontal="@dimen/margin_medium_2"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"/>
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:paddingHorizontal="@dimen/margin_medium_2"
+        app:srcCompat="@drawable/ic_arrow_right_24" />
 </RelativeLayout>

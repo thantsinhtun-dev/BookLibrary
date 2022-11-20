@@ -41,9 +41,10 @@
     <dimen name="recent_book_height">200dp</dimen>
 
 
-    <dimen name="width_vertical_book_item">170dp</dimen>
+    <dimen name="width_vertical_book_item">120dp</dimen>
     <dimen name="width_image_bottom_sheet">50dp</dimen>
     <dimen name="height_image_bottom_sheet">100dp</dimen>
-    <dimen name="width_img_shelves">100dp</dimen>
+    <dimen name="width_img_shelves">50dp</dimen>
     <dimen name="height_recent_bok">200dp</dimen>
+    <dimen name="height_btn">56dp</dimen>
 </resources>

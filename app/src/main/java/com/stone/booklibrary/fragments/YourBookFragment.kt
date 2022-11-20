@@ -1,6 +1,7 @@
 package com.stone.booklibrary.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.stone.booklibrary.mvp.presenter.YourBookPresenterImpl
 import com.stone.booklibrary.mvp.view.YourBookView
 import com.stone.booklibrary.viewpods.CustomBookViewPod
 import com.stone.booklibrary.viewpods.ListStyle
+import com.stone.booklibrary.viewpods.SortType
 import kotlinx.android.synthetic.main.fragment_your_book.*
 import kotlinx.android.synthetic.main.view_pod_custom_book_list.*
 
@@ -79,6 +81,8 @@ class YourBookFragment : Fragment(),YourBookView {
     }
 
     override fun onTapSortList() {
+        val chooseRecyclerViewListStyle = SortListFragment(mPresenter)
+        chooseRecyclerViewListStyle.show(childFragmentManager,chooseRecyclerViewListStyle.tag)
     }
 
     override fun changeRecyclerViewStyle(listStyle: ListStyle) {
@@ -86,11 +90,17 @@ class YourBookFragment : Fragment(),YourBookView {
     }
 
     override fun rebuildList(books: List<BookVO>) {
+        Log.i("Gooooooooo",books.toString())
         mCustomBookViewPod.setNewBookData(books)
+
     }
 
     override fun addToShelves(bookVO: BookVO) {
         startActivity(context?.let { AddToSheetActivity.getIntent(it,bookVO) })
+    }
+
+    override fun sortList(sortType: SortType) {
+        mCustomBookViewPod.sortList(sortType)
     }
 
     override fun showError(error: String) {

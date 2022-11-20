@@ -4,16 +4,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.stone.booklibrary.viewpods.CircularImageView
         android:id="@+id/ivCancel"
-        android:visibility="gone"
-        android:layout_marginStart="@dimen/margin_medium_2"
-        app:srcCompat="@drawable/ic_cancel_24"
+        android:visibility="visible"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@id/rvBookCategory"
+        android:layout_marginStart="@dimen/margin_medium_2"
         android:layout_alignBottom="@id/rvBookCategory"
-        android:layout_width="@dimen/margin_xlarge"
-        android:layout_height="wrap_content"/>
+        android:layout_centerVertical="true"
+        android:padding="@dimen/margin_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/color_dark_grey"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        app:strokeColor="@color/color_dark_grey"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBookCategory"
         android:layout_toEndOf="@id/ivCancel"
@@ -52,7 +56,7 @@
             android:layout_toEndOf="@id/tvSortBy"
             android:fontFamily="@font/poppins_regular"
             android:textSize="@dimen/text_small"
-            android:text="@string/lbl_sort_by"
+            android:text="Recent"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="@dimen/margin_large"/>
@@ -67,6 +71,17 @@
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBookList"
+        android:layout_marginHorizontal="@dimen/margin_medium_2"
+        android:clipToPadding="true"
+        android:layout_below="@id/rlSortList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_book_style_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBookSmallList"
+        android:visibility="gone"
         android:layout_marginHorizontal="@dimen/margin_medium_2"
         android:clipToPadding="true"
         android:layout_below="@id/rlSortList"

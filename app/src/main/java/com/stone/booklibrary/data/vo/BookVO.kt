@@ -2,12 +2,18 @@ package com.stone.booklibrary.data.vo
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.net.IDN
 
-@Entity(tableName = "books", primaryKeys = ["title","author"])
+@Entity(tableName = "books",indices = [
+    Index(value = ["title"], unique = true)
+])
+
 data class BookVO(
+    @PrimaryKey(autoGenerate = true)
+    val id:Int,
     @SerializedName("author")
     @ColumnInfo(name = "author")
     val author: String,

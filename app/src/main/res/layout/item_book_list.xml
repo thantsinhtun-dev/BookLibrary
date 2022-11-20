@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginVertical="@dimen/margin_medium"
         android:background="@color/color_dark_grey"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         app:shapeAppearanceOverlay="@style/ImageView.Corner"
         app:srcCompat="@drawable/book" />
 
@@ -35,6 +35,7 @@
         android:fontFamily="@font/poppins_regular"
         android:text="Book Title"
         app:fontFamily="@font/poppins_medium"
+        android:layout_marginHorizontal="@dimen/margin_medium"
         android:ellipsize="end"
         android:maxLines="1"
         android:textSize="@dimen/text_small" />
@@ -48,6 +49,7 @@
         app:fontFamily="@font/poppins_regular"
         android:maxLines="1"
         android:ellipsize="end"
+        android:layout_marginHorizontal="@dimen/margin_medium"
         android:textSize="@dimen/text_small" />
 
 </RelativeLayout>

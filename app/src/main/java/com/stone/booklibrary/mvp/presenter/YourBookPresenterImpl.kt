@@ -1,5 +1,6 @@
 package com.stone.booklibrary.mvp.presenter
 
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import com.stone.booklibrary.data.models.AppModel
@@ -7,6 +8,7 @@ import com.stone.booklibrary.data.models.AppModelImpl
 import com.stone.booklibrary.data.vo.BookVO
 import com.stone.booklibrary.mvp.view.YourBookView
 import com.stone.booklibrary.viewpods.ListStyle
+import com.stone.booklibrary.viewpods.SortType
 
 class YourBookPresenterImpl : ViewModel(), YourBookPresenter {
     private var mView: YourBookView? = null
@@ -23,7 +25,7 @@ class YourBookPresenterImpl : ViewModel(), YourBookPresenter {
 
     override fun onClickCancelImg() {
 
-        for (book in books){
+        for (book in books) {
             book.selected = false
         }
         mView?.onClickBookCategory(books)
@@ -61,7 +63,6 @@ class YourBookPresenterImpl : ViewModel(), YourBookPresenter {
     }
 
 
-
     override fun onClickBookMore(bookVO: BookVO) {
         mView?.showBookBottomSheet(bookVO)
     }
@@ -80,6 +81,16 @@ class YourBookPresenterImpl : ViewModel(), YourBookPresenter {
 
     override fun onClickAddToShelves(bookVO: BookVO) {
         mView?.addToShelves(bookVO)
+    }
+
+    override fun sortList(sortType: SortType) {
+        when (sortType) {
+            SortType.RECENT -> mView?.rebuildList(books.sortedBy { it.id })
+            SortType.AUTHOR -> mView?.rebuildList(books.sortedBy { it.author })
+            SortType.TITLE -> mView?.rebuildList(books.sortedBy { it.title })
+        }
+        mView?.sortList(sortType)
+
     }
 
 
