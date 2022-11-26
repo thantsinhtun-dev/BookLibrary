@@ -4,5 +4,11 @@
         <attr name="strokeWidth" format="dimension"/>
         <attr name="strokeColor" format="color" />
     </declare-styleable>
-
+    <declare-styleable name="LineProgressIndicator">
+        <attr name="minLineValue" format="integer"/>
+        <attr name="maxLineValue" format="integer"/>
+        <attr name="lineProgressValue" format="integer"/>
+        <attr name="lineProgressBarColor" format="color"/>
+        <attr name="lineProgressBarThickness" format="dimension"/>
+    </declare-styleable>
 </resources>

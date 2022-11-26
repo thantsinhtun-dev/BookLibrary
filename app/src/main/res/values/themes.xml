@@ -20,17 +20,17 @@
         <item name="android:textStyle">bold</item>
     </style>
     <style name="ImageView.Corner" parent="">
-        <item name="cornerSizeTopRight">@dimen/margin_medium_2</item>
-        <item name="cornerSizeTopLeft">@dimen/margin_medium_2</item>
-        <item name="cornerSizeBottomLeft">@dimen/margin_medium_2</item>
-        <item name="cornerSizeBottomRight">@dimen/margin_medium_2</item>
-        <item name="cornerFamily">rounded</item>
-    </style>
-    <style name="ImageView.Corner.small" parent="">
         <item name="cornerSizeTopRight">@dimen/margin_medium</item>
         <item name="cornerSizeTopLeft">@dimen/margin_medium</item>
         <item name="cornerSizeBottomLeft">@dimen/margin_medium</item>
         <item name="cornerSizeBottomRight">@dimen/margin_medium</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="ImageView.Corner.small" parent="">
+        <item name="cornerSizeTopRight">@dimen/margin_small</item>
+        <item name="cornerSizeTopLeft">@dimen/margin_small</item>
+        <item name="cornerSizeBottomLeft">@dimen/margin_small</item>
+        <item name="cornerSizeBottomRight">@dimen/margin_small</item>
         <item name="cornerFamily">rounded</item>
     </style>
 </resources>

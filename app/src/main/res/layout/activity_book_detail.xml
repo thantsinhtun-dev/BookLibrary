@@ -120,6 +120,152 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvAboutBook"
+            android:maxLines="7"
+            android:ellipsize="end"
             android:text="@string/lorem" />
+
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlAboutBook"
+        android:layout_marginVertical="@dimen/margin_medium">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:textSize="@dimen/text_regular_2x"
+            app:fontFamily="@font/poppins_medium" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/llRating"
+        android:layout_below="@id/rlRating"
+        android:weightSum="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rlRatingMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMainRating"
+                android:text="3.9"
+                app:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/text_big_2x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RatingBar
+                android:id="@+id/rdRate"
+                android:numStars="5"
+                android:rating="3.9"
+                style = "?android:attr/ratingBarStyleSmall"
+                android:layout_below="@id/tvMainRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="95Rating"
+                android:layout_below="@id/rdRate"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/rlRatingMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/rlRatingMain"
+            >
+            <com.stone.booklibrary.viewpods.LineProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                app:lineProgressBarColor="@color/colorPrimary"
+                app:lineProgressBarThickness="10dp"
+                app:lineProgressValue="55"
+                app:maxLineValue="100"
+                app:minLineValue="0" />
+            <com.stone.booklibrary.viewpods.LineProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                app:lineProgressBarColor="@color/colorPrimary"
+                app:lineProgressBarThickness="10dp"
+                app:lineProgressValue="55"
+                app:maxLineValue="100"
+                app:minLineValue="0" />
+            <com.stone.booklibrary.viewpods.LineProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                app:lineProgressBarColor="@color/colorPrimary"
+                app:lineProgressBarThickness="10dp"
+                app:lineProgressValue="55"
+                app:maxLineValue="100"
+                app:minLineValue="0" />
+            <com.stone.booklibrary.viewpods.LineProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                app:lineProgressBarColor="@color/colorPrimary"
+                app:lineProgressBarThickness="10dp"
+                app:lineProgressValue="55"
+                app:maxLineValue="100"
+                app:minLineValue="0" />
+            <com.stone.booklibrary.viewpods.LineProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                app:lineProgressBarColor="@color/colorPrimary"
+                app:lineProgressBarThickness="10dp"
+                app:lineProgressValue="55"
+                app:maxLineValue="100"
+                app:minLineValue="0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlComment"
+        android:layout_below="@id/llRating"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivP1"
+                app:srcCompat="@drawable/ic_person_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvP1"
+                android:text="Name"
+                android:layout_toEndOf="@id/ivP1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                app:fontFamily="@font/poppins_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RatingBar
+                android:id="@+id/rdRateItem"
+                android:numStars="5"
+                android:rating="3.9"
+                style = "?android:attr/ratingBarStyleSmall"
+                android:layout_toEndOf="@id/ivP1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_below="@id/ivP1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 </RelativeLayout>

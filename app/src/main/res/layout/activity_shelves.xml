@@ -59,11 +59,20 @@
             android:textSize="@dimen/text_regular_2x"
             app:fontFamily="@font/poppins_medium" />
     </RelativeLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookCount"
+        android:layout_below="@id/rlTitle"
+        android:text="3 Books"
+        app:fontFamily="@font/poppins_regular"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <include
         android:id="@+id/vpShelves"
         layout="@layout/view_pod_custom_book_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/rlTitle" />
+        android:layout_below="@id/tvBookCount" />
 </RelativeLayout>

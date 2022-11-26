@@ -21,6 +21,7 @@ import com.stone.booklibrary.data.models.AppModel
 import com.stone.booklibrary.data.models.AppModelImpl
 import com.stone.booklibrary.search.flow1.RecyclerViewMatchers
 import com.stone.booklibrary.viewholders.BookCategoryViewHolder
+import kotlinx.android.synthetic.main.fragment_mangement_shelves.*
 import kotlinx.android.synthetic.main.item_book_style_list.view.*
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf.allOf
@@ -96,7 +97,7 @@ class Case2 {
                         }
                     })
             )
-        Thread.sleep(1000L)
+        Thread.sleep(2000L)
         onView(withText(R.string.lbl_delete)).check(matches(isDisplayed()))
         onView(withText(R.string.lbl_download)).check(matches(isDisplayed()))
         onView(withText(R.string.lbl_add_to_shelves)).check(matches(isDisplayed()))
@@ -105,7 +106,7 @@ class Case2 {
         onView(withId(R.id.rlShelves)).check(matches(isDisplayed()))
         onView(withId(R.id.tvShelves)).perform(forceClick())
 
-        Thread.sleep(1000L)
+        Thread.sleep(2000L)
         onView(withId(R.id.rvShelves)).check(matches( hasChildCount(1)))
         onView(withId(R.id.cbShelves)).perform(click())
         onView(isRoot()).perform(pressBack())
@@ -126,10 +127,11 @@ class Case2 {
                         }
                     })
             )
-        Thread.sleep(1000L)
+        Thread.sleep(2000L)
         onView(withText(R.string.lbl_add_to_shelves)).check(matches(isDisplayed()))
         onView(withId(R.id.rlShelves)).check(matches(isDisplayed()))
         onView(withId(R.id.tvShelves)).perform(forceClick())
+        Thread.sleep(1000L)
         onView(withId(R.id.cbShelves)).perform(click())
         onView(isRoot()).perform(pressBack())
 
@@ -155,7 +157,9 @@ class Case2 {
         onView(withText(R.string.lbl_add_to_shelves)).check(matches(isDisplayed()))
         onView(withId(R.id.rlShelves)).check(matches(isDisplayed()))
         onView(withId(R.id.tvShelves)).perform(forceClick())
+        Thread.sleep(1000L)
         onView(withId(R.id.cbShelves)).perform(click())
+
         onView(isRoot()).perform(pressBack())
 
         onView(withText(R.string.lbl_your_shelves)).perform(click())
@@ -250,6 +254,31 @@ class Case2 {
         onView(withId(R.id.rvBookSmallList))
             .perform(scrollToPosition<BookCategoryViewHolder>(0))
             .check(matches(hasDescendant(withText("DESERT STAR"))))
+
+    }
+    @Test
+    fun test7_editDelete(){
+        onView(withId(R.id.menu_library)).perform(click())
+        onView(withText(R.string.lbl_your_shelves)).perform(click())
+        onView(withId(R.id.rvShelves))
+            .perform(actionOnItemAtPosition<ViewHolder>(0, click()))
+
+        onView(withId(R.id.ivMore)).perform(forceClick())
+        Thread.sleep(1000L)
+        onView(withId(R.id.rlEdit)).perform(forceClick())
+
+        onView(withId(R.id.editTitle)).perform(
+            clearText(),
+            typeText("new Shelf"),
+            pressImeActionButton()
+        )
+
+        onView(withId(R.id.ivMore)).perform(forceClick())
+        Thread.sleep(1000L)
+        onView(withId(R.id.rlDelete)).perform(click())
+
+        onView(withId(R.id.rvShelves)).check(matches((RecyclerViewMatchers.hasItemCount(0))))
+
 
     }
     private fun forceClick(): ViewAction? {

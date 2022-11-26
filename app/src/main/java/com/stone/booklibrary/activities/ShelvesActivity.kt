@@ -52,6 +52,7 @@ class ShelvesActivity : AppCompatActivity() ,ShelvesDetailView{
         shelfVo?.let {
             mPresenter.onUIReady(this,it.shelvesTitle)
             tvTitle.text = it.shelvesTitle
+            tvBookCount.text = "${it.bookLists?.count()}  Books"
         }
 
     }
