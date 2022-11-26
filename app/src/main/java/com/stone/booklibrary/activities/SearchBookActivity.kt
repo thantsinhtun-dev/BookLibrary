@@ -8,10 +8,8 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.tabs.TabLayoutMediator
 import com.stone.booklibrary.R
 import com.stone.booklibrary.adapter.SearchBookAdapter
-import com.stone.booklibrary.adapter.SearchPagerAdapter
 import com.stone.booklibrary.data.vo.BookVO
 import com.stone.booklibrary.mvp.presenter.SearchBookMainPresenter
 import com.stone.booklibrary.mvp.presenter.SearchBookMainPresenterImpl
@@ -49,7 +47,7 @@ class SearchBookActivity : AppCompatActivity() ,SearchBookView{
 
     private fun setUpRecyclerView() {
         mAdapter = SearchBookAdapter(mPresenter)
-        rvHome.adapter = mAdapter
+        rvSearch.adapter = mAdapter
     }
 
     private fun setUpListener() {

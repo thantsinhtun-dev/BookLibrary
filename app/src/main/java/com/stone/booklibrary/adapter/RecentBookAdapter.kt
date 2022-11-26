@@ -41,6 +41,7 @@ class RecentBookAdapter(val mDelegate: OverviewBookViewHolderDelegate) : Carouse
         var bookVO:BookVO? = null
         fun bindData(bookVO: BookVO){
             this.bookVO = bookVO
+            itemView.tvBookName.text = bookVO.title
             Glide.with(itemView.context)
                 .load(bookVO.bookImage)
                 .placeholder(R.drawable.book)

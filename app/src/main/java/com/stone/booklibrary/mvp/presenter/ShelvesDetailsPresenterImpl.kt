@@ -8,6 +8,7 @@ import com.stone.booklibrary.data.vo.BookVO
 import com.stone.booklibrary.data.vo.ShelfVO
 import com.stone.booklibrary.mvp.view.ShelvesDetailView
 import com.stone.booklibrary.viewpods.ListStyle
+import com.stone.booklibrary.viewpods.SortType
 
 class ShelvesDetailsPresenterImpl:ViewModel(),ShelvesDetailPresenter {
     private  var  mView: ShelvesDetailView? = null
@@ -93,8 +94,8 @@ class ShelvesDetailsPresenterImpl:ViewModel(),ShelvesDetailPresenter {
         mView?.onTapRecyclerViewStyle()
     }
 
-    override fun onClickSortList() {mView?.onTapSortList()
-
+    override fun onClickSortList() {
+        mView?.onTapSortList()
     }
 
     override fun chooseListStyle(listStyle: ListStyle) {
@@ -112,5 +113,14 @@ class ShelvesDetailsPresenterImpl:ViewModel(),ShelvesDetailPresenter {
     override fun onClickDelete(shelfTitle: String) {
         mAppMode.deleteShelves(shelfTitle)
         mView?.onClickBack()
+    }
+
+    override fun sortList(sortType: SortType) {
+        when (sortType) {
+            SortType.RECENT -> books?.let { mView?.rebuildList(it.sortedBy { it.id }) }
+            SortType.AUTHOR -> books?.let { mView?.rebuildList(it.sortedBy { it.author }) }
+            SortType.TITLE -> books?.let { mView?.rebuildList(it.sortedBy { it.title }) }
+        }
+        mView?.sortList(sortType)
     }
 }

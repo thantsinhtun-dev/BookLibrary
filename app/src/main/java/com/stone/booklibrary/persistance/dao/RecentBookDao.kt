@@ -19,7 +19,7 @@ interface RecentBookDao {
     fun getAllBooks(): LiveData<List<BookVO>>
 
     @Query("delete from books")
-    fun deleteAllMovies()
+    fun deleteAllBooks()
 
 
 }

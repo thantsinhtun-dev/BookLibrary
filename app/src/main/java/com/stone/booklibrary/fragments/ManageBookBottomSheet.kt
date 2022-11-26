@@ -46,6 +46,11 @@ class ManageBookBottomSheet(val bookVO: BookVO,val mDelegate:AddToShelvesDelegat
         rlMakeRead.setOnClickListener {  }
         rlShelves.setOnClickListener {
             mDelegate.onClickAddToShelves(bookVO)
+            dismiss()
+        }
+        tvShelves.setOnClickListener {
+            mDelegate.onClickAddToShelves(bookVO)
+            dismiss()
         }
     }
 }

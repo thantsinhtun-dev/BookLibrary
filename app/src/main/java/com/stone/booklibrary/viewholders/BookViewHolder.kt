@@ -11,11 +11,14 @@ import kotlinx.android.synthetic.main.item_book_vertical.view.*
 class BookViewHolder(itemView: View, mDelegate: OverviewBookViewHolderDelegate) :RecyclerView.ViewHolder(itemView) {
     private var bookVO:BookVO? = null
     init {
-        itemView.imgBook.setOnClickListener {
+        itemView.imgBookE.setOnClickListener {
             bookVO?.let { book -> mDelegate.onClickBook(book) }
         }
         itemView.imgMore.setOnClickListener {
             bookVO?.let { book->mDelegate.onClickBookMore(book) }
+        }
+        itemView.setOnClickListener {
+            bookVO?.let { book -> mDelegate.onClickBook(book) }
         }
     }
     fun bindData(bookVO: BookVO) {
@@ -25,7 +28,7 @@ class BookViewHolder(itemView: View, mDelegate: OverviewBookViewHolderDelegate) 
         Glide.with(itemView.context)
             .load(bookVO.bookImage)
             .placeholder(R.drawable.book)
-            .into(itemView.imgBook)
+            .into(itemView.imgBookE)
     }
 
 }

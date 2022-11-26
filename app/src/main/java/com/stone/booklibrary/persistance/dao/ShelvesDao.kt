@@ -3,6 +3,7 @@ package com.stone.booklibrary.persistance.dao
 import android.service.quicksettings.Tile
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -28,4 +29,7 @@ interface ShelvesDao {
 
     @Update()
     fun changeShelfTitle(shelf: ShelfVO)
+
+    @Query("delete from shelves")
+    fun deleteAllShelves()
 }

@@ -1,12 +1,11 @@
 package com.stone.booklibrary.data.vo
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
+import androidx.room.*
 import com.stone.booklibrary.persistance.BookTypeConverter
 
-@Entity(tableName = "shelves")
+@Entity(tableName = "shelves",indices = [
+    Index(value = ["shelves_title"], unique = true)
+])
 @TypeConverters(BookTypeConverter::class)
 data class ShelfVO(
     @PrimaryKey(autoGenerate = true)

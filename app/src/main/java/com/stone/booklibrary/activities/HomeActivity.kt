@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import com.stone.booklibrary.R
 import com.stone.booklibrary.data.models.AppModelImpl
 import com.stone.booklibrary.fragments.HomeFragment
@@ -37,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
                 Log.i("success",it)
             }
         )
-        edSearch.setOnClickListener {
+        txtSearch.setOnClickListener {
             startActivity(SearchBookActivity.getIntent(context = this))
         }
     }

@@ -44,5 +44,9 @@ interface AppModel {
     fun changeShelfTitle(
         shelfVO: ShelfVO?
     )
+    fun removeAllBook(){
+    }
+    fun removeAllShelves(){}
+
 
 }

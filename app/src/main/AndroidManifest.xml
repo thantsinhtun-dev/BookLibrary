@@ -20,17 +20,12 @@
             android:name=".activities.BookDetailActivity"
             android:theme="@style/Theme.BookLibrary.translucentScreenWhiteStatusBar"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
+        <activity android:name=".activities.BaseActivity"/>
         <activity
             android:name=".activities.SearchBookActivity"
             android:theme="@style/Theme.BookLibrary.translucentScreenWhiteStatusBar"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
         <activity
             android:name=".activities.ShelvesActivity"

@@ -14,11 +14,13 @@ import com.stone.booklibrary.data.vo.ShelfVO
 import com.stone.booklibrary.fragments.ChooseRecyclerViewListStyle
 import com.stone.booklibrary.fragments.ManageBookBottomSheet
 import com.stone.booklibrary.fragments.MangeShelvesFragment
+import com.stone.booklibrary.fragments.SortListFragment
 import com.stone.booklibrary.mvp.presenter.ShelvesDetailPresenter
 import com.stone.booklibrary.mvp.presenter.ShelvesDetailsPresenterImpl
 import com.stone.booklibrary.mvp.view.ShelvesDetailView
 import com.stone.booklibrary.viewpods.CustomBookViewPod
 import com.stone.booklibrary.viewpods.ListStyle
+import com.stone.booklibrary.viewpods.SortType
 import kotlinx.android.synthetic.main.activity_shelves.*
 import kotlinx.android.synthetic.main.activity_shelves.ivBack
 import kotlinx.android.synthetic.main.view_pod_custom_book_list.*
@@ -115,6 +117,8 @@ class ShelvesActivity : AppCompatActivity() ,ShelvesDetailView{
     }
 
     override fun onTapSortList() {
+        val chooseRecyclerViewListStyle = SortListFragment(mPresenter)
+        chooseRecyclerViewListStyle.show(supportFragmentManager,chooseRecyclerViewListStyle.tag)
     }
 
     override fun changeRecyclerViewStyle(listStyle: ListStyle) {
@@ -141,6 +145,10 @@ class ShelvesActivity : AppCompatActivity() ,ShelvesDetailView{
         }
     }
 
+    override fun sortList(sortType: SortType) {
+        mCustomBookViewPod.sortList(sortType)
+    }
+
     override fun showError(error: String) {
 
     }
@@ -149,7 +157,7 @@ class ShelvesActivity : AppCompatActivity() ,ShelvesDetailView{
         val sheet = ManageBookBottomSheet(bookVO,mPresenter)
         sheet.show(supportFragmentManager,sheet.tag)
     }
-    fun hideKeyboard() {
+    private fun hideKeyboard() {
         val view = this.currentFocus
         if (view != null) {
             val manager = getSystemService(

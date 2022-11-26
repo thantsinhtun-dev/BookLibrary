@@ -94,4 +94,14 @@ object AppModelImpl : BaseModel(), AppModel {
 
     }
 
+    override fun removeAllBook() {
+        mBooksDatabase?.recentBookDao()?.deleteAllBooks()
+    }
+
+    override fun removeAllShelves() {
+        mBooksDatabase?.shelvesDao()?.deleteAllShelves()
+    }
+
+
+
 }

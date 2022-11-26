@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/width_vertical_book_item"
     android:layout_height="match_parent"
+    android:id="@+id/rlMainEBook"
     android:paddingEnd="@dimen/margin_medium_2"
     >
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgBook"
+        android:id="@+id/imgBookE"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_alignParentTop="true"
@@ -30,7 +31,7 @@
         android:id="@+id/txtBookName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imgBook"
+        android:layout_below="@id/imgBookE"
         android:fontFamily="@font/poppins_regular"
         android:text="Book Title"
         app:fontFamily="@font/poppins_medium"
